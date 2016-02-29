@@ -1,7 +1,12 @@
 <?php
 
-$min = 0;
-$max = 100;
+if ($argc == 3) {
+	$min = $argv[1];
+	$max = $argv[2];
+} else {
+	$min = 1;
+	$max = 100;
+}
 
 $randomNumber = rand ( $min , $max );
 
@@ -21,8 +26,8 @@ do {
 
 	} 	
 
-		$userNumber = trim(fgets(STDIN));
-	
+	$userNumber = trim(fgets(STDIN));
+
 } while ($userNumber != $randomNumber);
 
 if ($userNumber == $randomNumber){
